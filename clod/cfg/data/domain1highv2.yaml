@@ -1,0 +1,43 @@
+box: 7.5
+cache: false
+classes: null
+cls: 0.5
+copy_paste: 0.0
+degrees: 0.0
+dfl: 1.5
+fliplr: 0.5
+flipud: 0.0
+fraction: 1.0
+hsv_h: 0.015
+hsv_s: 0.7
+hsv_v: 0.7
+imgsz: 640
+mask_ratio: 4
+mixup: 0.0
+mode: train
+mosaic: 1.0
+names:
+  0: bag
+  1: bottle
+  2: cardboard box
+  3: chair
+  4: potted plant
+  5: traffic cone
+  6: trashcan
+  7: ball
+  8: broom
+  9: garden hose
+  10: bucket
+  11: bycicle
+  12: gardening tool
+overlap_mask: true
+path: /home/riccardo/yolo_clod_v3/recipes/clod/datasets/domain5low
+perspective: 0.0
+rect: false
+scale: 0.5
+shear: 0.0
+single_cls: false
+task: detect
+train: train.txt
+translate: 0.1
+val: test.txt

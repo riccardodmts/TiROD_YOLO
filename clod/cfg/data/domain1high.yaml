@@ -1,0 +1,65 @@
+########
+# Data configuration file for COCO trainings.
+# Based on the ultralytics data conf.
+#
+# Adapted by:
+# - Matteo Beltrami, 2023
+# - Francesco Paissan, 2023
+########
+task: detect  # (str) YOLO task, i.e. detect, segment, classify, pose
+mode: train  # (str) YOLO mode, i.e. train, val, predict, export, track, benchmark
+
+# Train settings -------------------------------------------------------------------------------------------------------
+imgsz: 640  # (int | list) input images size as int for train and val modes, or list[w,h] for predict and export modes
+rect: False  # (bool) rectangular training if mode='train' or rectangular validation if mode='val'
+cache: False  # (bool) True/ram, disk or False. Use cache for data loading
+single_cls: False  # (bool) train multi-class data as single-class
+fraction: 1.0  # (float) dataset fraction to train on (default is 1.0, all images in train set)
+
+# Segmentation
+overlap_mask: True  # (bool) masks should overlap during training (segment train only)
+mask_ratio: 4  # (int) mask downsample ratio (segment train only)
+
+# Prediction settings --------------------------------------------------------------------------------------------------
+classes:  # (int | list[int], optional) filter results by class, i.e. classes=0, or classes=[0,2,3]
+
+# Hyperparameters ------------------------------------------------------------------------------------------------------
+box: 7.5  # (float) box loss gain
+cls: 0.5  # (float) cls loss gain (scale with pixels)
+dfl: 1.5  # (float) dfl loss gain
+
+hsv_h: 0.015  # (float) image HSV-Hue augmentation (fraction)
+hsv_s: 0.7  # (float) image HSV-Saturation augmentation (fraction)
+hsv_v: 0.7  # (float) image HSV-Value augmentation (fraction)
+degrees: 0.0  # (float) image rotation (+/- deg)
+translate: 0.1  # (float) image translation (+/- fraction)
+scale: 0.5  # (float) image scale (+/- gain)
+shear: 0.0  # (float) image shear (+/- deg)
+perspective: 0.0  # (float) image perspective (+/- fraction), range 0-0.001
+flipud: 0.0  # (float) image flip up-down (probability)
+fliplr: 0.5  # (float) image flip left-right (probability)
+mosaic: 1.0  # (float) image mosaic (probability)
+mixup: 0.0  # (float) image mixup (probability)
+copy_paste: 0.0  # (float) segment copy-paste (probability)
+
+
+# Dataset location
+path: datasets/domain1high  # dataset root dir
+train: train.txt  # train images (relative to 'path') 118287 images
+val: test.txt  # val images (relative to 'path') 5000 images
+
+# Classes
+names:
+ 0: 'bag'
+ 1: 'bottle'
+ 2: 'cardboard box'
+ 3: 'chair' 
+ 4: 'potted plant'
+ 5: 'traffic cone'
+ 6: 'trashcan'
+ 7: 'ball'
+ 8: 'broom'
+ 9: 'garden hose'
+ 10: 'bucket'
+ 11: 'bycicle'
+ 12: 'gardening tool'
